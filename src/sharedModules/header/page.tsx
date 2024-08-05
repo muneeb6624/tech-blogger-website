@@ -5,6 +5,7 @@ import logo from "../../assets/(home)/logo.png";
 import Image from 'next/image';
 import { IoSearchOutline } from "react-icons/io5";
 import { Input } from '@/components/ui/input';
+import { log } from 'console';
 
 function Header() {
   // State to manage menu visibility
@@ -32,6 +33,7 @@ function Header() {
   // For search bar
   const [isInputVisible, setInputVisible] = useState(false);
   const handleIconClick = () => setInputVisible(!isInputVisible);
+console.log("testing.");
 
   return (
     <nav className="flex justify-center items-center align-middle p-3">
