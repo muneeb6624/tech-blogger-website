@@ -33,7 +33,6 @@ function Header() {
   // For search bar
   const [isInputVisible, setInputVisible] = useState(false);
   const handleIconClick = () => setInputVisible(!isInputVisible);
-console.log("testing.");
 
   return (
     <nav className="flex justify-center items-center align-middle p-3">
