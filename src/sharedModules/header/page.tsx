@@ -5,11 +5,12 @@ import logo from "../../assets/(home)/logo.png";
 import Image from 'next/image';
 import { IoSearchOutline } from "react-icons/io5";
 import { Input } from '@/components/ui/input';
-import { log } from 'console';
+import { GiHamburgerMenu } from "react-icons/gi";
 
 function Header() {
   // State to manage menu visibility
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // New state for mobile menu
   const [hideTimeout, setHideTimeout] = useState<NodeJS.Timeout | null>(null);
 
   // Ref to keep track of menu container
@@ -34,14 +35,28 @@ function Header() {
   const [isInputVisible, setInputVisible] = useState(false);
   const handleIconClick = () => setInputVisible(!isInputVisible);
 
+  // Toggle mobile menu
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
   return (
-    <nav className="flex justify-center items-center align-middle p-3">
+    <nav className="flex flex-col lg:flex-row justify-between items-center p-3">
       <div className="container mx-auto flex items-center justify-between px-4 py-2">
         {/* Logo */}
         <Image src={logo} alt='logo' className='h-10 w-auto' />
 
+        {/* Hamburger Menu Button */}
+        <button
+          onClick={toggleMobileMenu}
+          className="lg:hidden text-white"
+          aria-label="Toggle menu"
+        >
+          <GiHamburgerMenu size={24} />
+        </button>
+
         {/* Menu Items */}
-        <ul className="flex space-x-7">
+        <ul className={`lg:flex lg:space-x-7 lg:items-center lg:justify-center space-y-4 lg:space-y-0 transition-all duration-300 ${isMobileMenuOpen ? 'block' : 'hidden lg:block'}`}>
           <li>
             <a href="/" className="font-normal text-slate-300 hover:text-slate-50 active:font-extrabold focus:font-extrabold">Home</a>
           </li>
@@ -115,7 +130,7 @@ function Header() {
           </li>
 
           <li>
-            <a className='font-normal text-slate-300 hover:text-slate-50' href="pages/deals">Deals</a>
+            <a className='font-normal text-slate-300 hover:text-slate-50' href="/pages/deals">Deals</a>
           </li>
           <li>
             <a className='font-normal text-slate-300 hover:text-slate-50' href="#">About</a>

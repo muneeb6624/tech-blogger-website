@@ -17,22 +17,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" >
-<div
+    <html lang="en">
+      <div
         className="fixed inset-0 bg-fixed"
         style={{
           backgroundImage: `url("https://images.pexels.com/photos/3780104/pexels-photo-3780104.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
           zIndex: -1,
-          opacity: 2,  // Optional: to make it less dominant
+          opacity: 2, // Optional: to make it less dominant
         }}
       />
       <body className={inter.className}>
         {/* Background Image */}
-        
+
         <Header />
+        {/* <div className=" border-lime-500 h-svh absolute ml-auto mr-auto top-0 z-40" ></div> */}
         {children}
         <Footer />
       </body>
