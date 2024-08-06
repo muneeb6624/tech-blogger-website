@@ -43,7 +43,7 @@ function PopularPosts() {
 
   return (
     <div className="bg-white mt-28 flex flex-col justify-center ">
-      <h1 className=" text-5xl mb-11 font-extrabold"> Latest Posts </h1>
+      <h1 className=" text-5xl mb-11 font-extrabold text-center"> Latest Posts </h1>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 sm:grid-cols-1  gap-4 gap-y-11">
         {cards.map((card, index) => (
           <CustomCard
