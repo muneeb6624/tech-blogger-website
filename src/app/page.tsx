@@ -7,8 +7,7 @@ import Featured from "@/sections/(home)/featured/page";
 export default function Home() {
   return (
     <main className="relative">
-      
-      <div className="relative z-10">
+      <div className="relative z-10 font-montserrat">
         {/* Background image will be behind this content */}
 
         {/* Hero Section */}
@@ -18,7 +17,6 @@ export default function Home() {
         <div className="">
           <Featured />
         </div>
-
 
         {/* Popular Posts Section */}
 
@@ -36,8 +34,6 @@ export default function Home() {
         <div className="flex justify-center items-center bg-white pb-36">
           <LatestPosts />
         </div>
-
-
       </div>
     </main>
   );

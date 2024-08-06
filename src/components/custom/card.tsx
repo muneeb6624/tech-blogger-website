@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 interface CardProps {
   src: string;
@@ -9,16 +10,18 @@ interface CardProps {
 
 const CustomCard: React.FC<CardProps> = ({ src, heading, para, subtitle }) => {
   return (
-    <div className="max-w-sm rounded overflow-hidden shadow-sm cursor-pointer shadow-black hover:bg-slate-300 transition ease-in-out duration-300">
-      <img
-        className="w-full"
+    <div className="max-w-sm rounded overflow-hidden shadow-md cursor-pointer hover:bg-slate-300 transition ease-in-out duration-300">
+      <Image
+        width= {500}
+        height={500}
         src={src}
         alt="Image"
+        className=" h-64"
       />
       <div className="px-6 py-4">
-      <div className="text-green-500 text-sm mb-2">{subtitle}</div>
-        <div className="font-bold text-xl mb-2">{heading}</div>
-        <p className="text-gray-700 text-base">{para}</p>
+      <div className="text-green-500 font-bold text-sm mb-2 font-sans">{subtitle}</div>
+        <div className="font-extrabold text-2xl mb-2 font-montserrat">{heading}</div>
+        <p className="text-gray-700 text-base font-sans">{para}</p>
       </div>
     </div>
   );
