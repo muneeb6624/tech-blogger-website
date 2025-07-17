@@ -22,7 +22,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2531484484594177"
-     crossorigin="anonymous"></Script>
+     crossOrigin="anonymous"></Script>
       </head>
       <div
         className="fixed inset-0 bg-fixed"
