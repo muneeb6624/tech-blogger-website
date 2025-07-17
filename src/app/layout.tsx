@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/sharedModules/header/page";
 import Footer from "@/sharedModules/footer/page";
+import Script from "next/script";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,6 +20,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2531484484594177"
+     crossorigin="anonymous"></Script>
+      </head>
       <div
         className="fixed inset-0 bg-fixed"
         style={{
